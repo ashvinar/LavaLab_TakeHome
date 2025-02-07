@@ -1,17 +1,17 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Radius } from 'lucide-react';
 
 export const AddMaterialForm = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button className="w-full md:w-auto bg-[#8B5CF6] hover:bg-[#7C3AED]">
-          Add New
+        <Button className="w-full md:w-auto bg-[#444EAA] hover:bg-[#7C3AED] rounded-sm" style={{width: '108px', height: '36px'}}>
+          + Add New
         </Button>
       </SheetTrigger>
       <SheetContent className="w-full sm:max-w-[540px]">

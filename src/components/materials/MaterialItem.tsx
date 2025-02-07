@@ -1,9 +1,9 @@
-
 import React, { useState } from 'react';
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Minus, Plus } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import MinusIcon from '@/components/icons/MinusIcon';
+import PlusIcon from '@/components/icons/PlusIcon';
 
 interface MaterialItemProps {
   image: string;
@@ -49,7 +49,7 @@ export const MaterialItem = ({ image, name, quantity: initialQuantity, threshold
             className="h-[60px] w-[60px] rounded-none border-r border-border transform transition-all duration-300"
             onClick={handleDecrease}
           >
-            <Minus className="h-4 w-4" />
+            <MinusIcon className="h-6 w-6 text-gray-500" />
           </Button>
           <div className="flex flex-col items-center transform transition-all duration-300">
             <div className={cn(
@@ -75,7 +75,7 @@ export const MaterialItem = ({ image, name, quantity: initialQuantity, threshold
             className="h-[60px] w-[60px] rounded-none border-l border-border transform transition-all duration-300"
             onClick={handleIncrease}
           >
-            <Plus className="h-4 w-4" />
+            <PlusIcon className="h-6 w-6 text-gray-500" />
           </Button>
         </div>
       </div>

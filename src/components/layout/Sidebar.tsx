@@ -91,13 +91,13 @@ export const Sidebar = () => {
           <div className="flex-shrink-0">
             <img
               className="h-8 w-8 rounded-full"
-              src="https://cdn.builder.io/api/v1/image/assets/f4fb4c8b462d48ecb8affa69b88c58d2/3c99c6e9d39bb0540bce0be82d89dd82c3b37c5af21201125e6bfd3166844fb1"
+              src="https://media.licdn.com/dms/image/v2/D5603AQFKUtvBPTikBA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1699396044205?e=1744243200&v=beta&t=Mz15P-PvDPDMh7znwZQNa2oy7m-ccBzN22-zUs5qngY"
               alt="User"
             />
           </div>
           <div className="ml-3 whitespace-nowrap overflow-hidden">
-            <p className="text-sm font-medium text-gray-900">Don't Ruin It</p>
-            <p className="text-xs text-gray-500">Pro Crafter</p>
+            <p className="text-sm font-medium text-gray-900">Ashvin Arora</p>
+            <p className="text-xs text-gray-500">Premium Member</p>
           </div>
         </div>
       </div>
