@@ -40,10 +40,10 @@ export const MaterialItem = ({ image, name, quantity: initialQuantity, threshold
   };
 
   return (
-    <div className="flex items-center justify-between p-4 border-b border-white h-[48px] mb-[15px] last:mb-0 transform transition-transform duration-300">
+    <div className="flex items-center justify-between p-4 border-b border-white h-[48px] mb-[15px] last:mb-0 transform transition-transform duration-300 m-5">
       <div className="flex items-center gap-4 transform transition-all duration-300">
         <img src={image} alt={name} className="w-12 h-12 rounded object-cover transform transition-all duration-300" />
-        <span className="font-medium transform transition-all duration-300">{name}</span>
+        <span className="font-medium material-name transform transition-all duration-300">{name}</span>
       </div>
       <div className="flex items-center gap-4 transform transition-all duration-300">
         <div className="flex items-stretch rounded-md border border-border overflow-hidden h-[48px] transform transition-all duration-300">

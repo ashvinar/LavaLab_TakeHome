@@ -117,7 +117,7 @@ export const MaterialList = ({ selectedCategory, selectedColors, selectedSizes, 
   });
 
   return (
-    <div className="bg-white rounded-lg shadow"> 
+    <div className="bg-white rounded-lg shadow" style={{height: "550px"}}> 
       {sortedMaterials.map((material, index) => (
         <MaterialItem key={index} {...material} quantity={material.quantity} />
       ))}
