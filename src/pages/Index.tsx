@@ -14,7 +14,7 @@ const Index = () => {
   const [searchTerm, setSearchTerm] = useState('');
   
   return (
-    <div className="flex min-h-screen bg-gray-100">
+    <div className="flex min-h-screen bg-gray-100" style={{ marginTop: '-10px'}}>
       <Sidebar />
       
       <main className={`flex-1 p-4 md:p-8 ${isMobile ? 'ml-0' : 'ml-16'}`}>
@@ -28,7 +28,7 @@ const Index = () => {
             { label: "Order Queue" }
           ]}
         />
-          <div className="bg-white rounded-lg shadow-sm">
+          <div className="bg-white rounded-lg shadow-sm -mt-5">
             <MaterialSearch 
               selectedCategory={selectedCategory}
               onCategoryChange={setSelectedCategory}

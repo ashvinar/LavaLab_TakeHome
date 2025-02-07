@@ -39,3 +39,14 @@ This project is built with .
 - shadcn-ui
 - Tailwind CSS
 
+## Extra Functionality
+
+Be sure to test out the:
+
+- Add New Button
+- Filter
+- Sort
+- Search Bar
+- Different Pages
+- Increase/Decrease Quantity
+
