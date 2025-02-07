@@ -27,7 +27,7 @@ export const Sidebar = () => {
         "min-h-screen flex flex-col justify-between bg-white fixed left-0 top-0 bottom-0 border-r border-gray-200 transition-all duration-300 z-50 w-16 hover:w-64"
       )}
     >
-      <div className="space-y-6">
+      <div className="space-y-0">
         <div className="flex items-center p-4">
           <img 
             src="https://cdn.builder.io/api/v1/image/assets/f4fb4c8b462d48ecb8affa69b88c58d2/d2e4900ee878c26ee7a92329638bd3f21142579adcf26ba56795c90e959abbaa" 
@@ -38,7 +38,7 @@ export const Sidebar = () => {
           <span className="ml-3 text-xl text-gray-900 whitespace-nowrap overflow-hidden" style={{ color: '#444EAA'}}>Tally</span>
         </div>
         
-        <nav className="px-2 space-y-1">
+        <nav className="px-2 space-y-3">
   {navItems.map((item) => (
     <>
       <Button
@@ -46,7 +46,7 @@ export const Sidebar = () => {
         variant={location.pathname === item.path ? "secondary" : "ghost"}
         className={cn(
           "w-full justify-start gap-3 px-3",
-          location.pathname === item.path ? "bg-gray-100 text-gray-900" : "text-gray-600 hover:bg-gray-50"
+          location.pathname === item.path ? "bg-[#F3F4FC] text-gray-900 border border-[#DADCEE]" : "text-gray-600 hover:bg-[#F3F4FC] hover:border hover:border-[#DADCEE] hoever:border-2px hover:shadow-md"
         )}
         onClick={() => navigate(item.path)}
       >
@@ -75,7 +75,6 @@ export const Sidebar = () => {
         )}
       </Button>
 
-      {/* ADD A LIGHT GRAY BAR BELOW THE "Fulfillment" BUTTON */}
       {item.label === 'Fulfillment' && <div className="border-t border-[#EBEBEB] my-2" ></div>}
     </>
   ))}
