@@ -77,7 +77,7 @@ export const MaterialSearch = ({
         <div className="flex gap-2">
           <Sheet>
             <SheetTrigger asChild>
-            <Button variant="outline" size="icon" className="border-none">
+            <Button variant="outline" size="icon" className="border-none" style={{ transform: 'translateX(-5px)' }}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '24px', height: '24px' }}>
               <path d="M6 8H18" stroke="#858585" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M9 12H15" stroke="#858585" stroke-linecap="round" stroke-linejoin="round"/>
@@ -126,8 +126,8 @@ export const MaterialSearch = ({
           </Sheet>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="icon" className = "border-none">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '24px', height: '24px' }}>
+            <Button variant="outline" size="icon" className="border-none" style={{ transform: 'translateX(-10px)'}}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '24px', height: '24px' }}>
                 <path d="M19 15L16 18L13 15" stroke="#858585" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M16 18V6" stroke="#858585" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M5 9L8 6L11 9" stroke="#858585" stroke-linecap="round" stroke-linejoin="round"/>
