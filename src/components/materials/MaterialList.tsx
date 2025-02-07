@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MaterialItem } from './MaterialItem';
 import { Category, Size, Color, SortOrder } from './MaterialSearch';
@@ -91,15 +90,17 @@ interface MaterialListProps {
   selectedColors: Color[];
   selectedSizes: Size[];
   sortOrder: SortOrder;
+  searchTerm: string;
 }
 
-export const MaterialList = ({ selectedCategory, selectedColors, selectedSizes, sortOrder }: MaterialListProps) => {
+export const MaterialList = ({ selectedCategory, selectedColors, selectedSizes, sortOrder, searchTerm }: MaterialListProps) => {
   const filteredMaterials = materials.filter(material => {
     const matchesCategory = selectedCategory === 'all' || material.category === selectedCategory;
     const matchesColor = selectedColors.length === 0 || selectedColors.includes(material.color);
     const matchesSize = selectedSizes.length === 0 || selectedSizes.includes(material.size);
+    const matchesSearch = material.name.toLowerCase().includes(searchTerm.toLowerCase());
     
-    return matchesCategory && matchesColor && matchesSize;
+    return matchesCategory && matchesColor && matchesSize && matchesSearch;
   });
 
   const sortedMaterials = [...filteredMaterials].sort((a, b) => {
@@ -118,8 +119,9 @@ export const MaterialList = ({ selectedCategory, selectedColors, selectedSizes, 
   return (
     <div className="bg-white rounded-lg shadow"> 
       {sortedMaterials.map((material, index) => (
-        <MaterialItem key={index} {...material} />
+        <MaterialItem key={index} {...material} quantity={material.quantity} />
       ))}
     </div>
   );
 };
+

@@ -35,47 +35,51 @@ export const Sidebar = () => {
             className="w-8 h-8 cursor-pointer"
             onClick={() => navigate('/')}
           />
-          <span className="ml-3 text-xl font-semibold text-gray-900 whitespace-nowrap overflow-hidden">Tally</span>
+          <span className="ml-3 text-xl text-gray-900 whitespace-nowrap overflow-hidden" style={{ color: '#444EAA'}}>Tally</span>
         </div>
         
         <nav className="px-2 space-y-1">
-          {navItems.map((item) => (
-            <Button
-              key={item.label}
-              variant={location.pathname === item.path ? "secondary" : "ghost"}
-              className={cn(
-                "w-full justify-start gap-3 px-3",
-                location.pathname === item.path ? "bg-gray-100 text-gray-900" : "text-gray-600 hover:bg-gray-50",
-                item.label === 'Integrations' ? 'mt-4' : ''
-              )}
-              onClick={() => navigate(item.path)}
-            >
-              {item.label === 'Materials' ? (
-                <>
-                  <img src={location.pathname === item.path ? "/Property 1=Components - Active.svg" : "/Property 1=Components - Inactive.svg"} alt="Materials" className="h-6 w-6 mt-1" />
-                  <span className="whitespace-nowrap overflow-hidden mt-1">{item.label}</span>
-                </>
-              ) : item.label === 'Products' ? (
-                <>
-                  <img src={location.pathname === item.path ? "/Property 1=Products  - Active.svg" : "/Property 1=Products  - Inactive.svg"} alt="Products" className="h-6 w-6 mt-1" />
-                  <span className="whitespace-nowrap overflow-hidden mt-1">{item.label}</span>
-                </>
-              ) : item.label === 'Fulfillment' ? (
-                <>
-                  <img src={location.pathname === item.path ? "/Property 1=Orders - Active.svg" : "/Property 1=Orders - Inactive.svg"} alt="Fulfillment" className="h-6 w-6 mt-1" />
-                  <span className="whitespace-nowrap overflow-hidden mt-1">{item.label}</span>
-                </>
-              ) : item.label === 'Integrations' ? (
-                <>
-                  <img src={location.pathname === item.path ? "/Property 1=Integrations - Active.svg" : "/Property 1=Integrations - Inactive.svg"} alt="Integrations" className="h-6 w-6 mt-1" />
-                  <span className="whitespace-nowrap overflow-hidden mt-1">{item.label}</span>
-                </>
-              ) : (
-                <item.icon className="h-6 w-6" />
-              )}
-            </Button>
-          ))}
-        </nav>
+  {navItems.map((item) => (
+    <>
+      <Button
+        key={item.label}
+        variant={location.pathname === item.path ? "secondary" : "ghost"}
+        className={cn(
+          "w-full justify-start gap-3 px-3",
+          location.pathname === item.path ? "bg-gray-100 text-gray-900" : "text-gray-600 hover:bg-gray-50"
+        )}
+        onClick={() => navigate(item.path)}
+      >
+        {item.label === 'Materials' ? (
+          <>
+            <img src={location.pathname === item.path ? "/Property 1=Components - Active.svg" : "/Property 1=Components - Inactive.svg"} alt="Materials" className="h-6 w-6 mt-1" />
+            <span className="whitespace-nowrap overflow-hidden mt-1">{item.label}</span>
+          </>
+        ) : item.label === 'Products' ? (
+          <>
+            <img src={location.pathname === item.path ? "/Property 1=Products  - Active.svg" : "/Property 1=Products  - Inactive.svg"} alt="Products" className="h-6 w-6 mt-1" />
+            <span className="whitespace-nowrap overflow-hidden mt-1">{item.label}</span>
+          </>
+        ) : item.label === 'Fulfillment' ? (
+          <>
+            <img src={location.pathname === item.path ? "/Property 1=Orders - Active.svg" : "/Property 1=Orders - Inactive.svg"} alt="Fulfillment" className="h-6 w-6 mt-1" />
+            <span className="whitespace-nowrap overflow-hidden mt-1">{item.label}</span>
+          </>
+        ) : item.label === 'Integrations' ? (
+          <>
+            <img src={location.pathname === item.path ? "/Property 1=Integrations - Active.svg" : "/Property 1=Integrations - Inactive.svg"} alt="Integrations" className="h-6 w-6 mt-1" />
+            <span className="whitespace-nowrap overflow-hidden mt-1">{item.label}</span>
+          </>
+        ) : (
+          <item.icon className="h-6 w-6" />
+        )}
+      </Button>
+
+      {/* ADD A LIGHT GRAY BAR BELOW THE "Fulfillment" BUTTON */}
+      {item.label === 'Fulfillment' && <div className="border-t border-[#EBEBEB] my-2" ></div>}
+    </>
+  ))}
+</nav>
       </div>
 
       <div className="p-2 space-y-2 border-t border-gray-200">

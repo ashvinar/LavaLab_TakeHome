@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Input } from "@/components/ui/input";
 import { ArrowRightLeft, SlidersHorizontal, Search } from 'lucide-react';
@@ -35,6 +34,7 @@ interface MaterialSearchProps {
   onSizeChange: (sizes: Size[]) => void;
   selectedSizes: Size[];
   onSortChange?: (order: SortOrder) => void;
+  onSearchChange: (searchTerm: string) => void;
 }
 
 export const MaterialSearch = ({ 
@@ -44,9 +44,11 @@ export const MaterialSearch = ({
   selectedColors,
   onSizeChange,
   selectedSizes,
-  onSortChange = () => {} 
+  onSortChange = () => {},
+  onSearchChange
 }: MaterialSearchProps) => {
   const isMobile = useIsMobile();
+  const [searchTerm, setSearchTerm] = useState('');
 
   const handleColorToggle = (color: Color) => {
     if (selectedColors.includes(color)) {
@@ -64,6 +66,12 @@ export const MaterialSearch = ({
     }
   };
 
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    setSearchTerm(value);
+    onSearchChange(value);
+  };
+
   return (
     <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full gap-4 p-4 md:p-6">
       <div className="flex flex-col md:flex-row items-start md:items-center w-full md:w-auto md:flex-1 gap-4">
@@ -72,6 +80,8 @@ export const MaterialSearch = ({
           <Input
             placeholder="Search Materials"
             className="pl-10 w-full"
+            value={searchTerm}
+            onChange={handleSearchChange}
           />
         </div>
         <div className="flex gap-2">

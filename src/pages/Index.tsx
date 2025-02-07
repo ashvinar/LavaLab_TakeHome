@@ -11,6 +11,7 @@ const Index = () => {
   const [selectedColors, setSelectedColors] = useState<Color[]>([]);
   const [selectedSizes, setSelectedSizes] = useState<Size[]>([]);
   const [sortOrder, setSortOrder] = useState<SortOrder>('asc');
+  const [searchTerm, setSearchTerm] = useState('');
   
   return (
     <div className="flex min-h-screen bg-gray-100">
@@ -36,12 +37,14 @@ const Index = () => {
               selectedSizes={selectedSizes}
               onSizeChange={setSelectedSizes}
               onSortChange={setSortOrder}
+              onSearchChange={setSearchTerm}
             />
             <MaterialList 
               selectedCategory={selectedCategory} 
               selectedColors={selectedColors}
               selectedSizes={selectedSizes}
               sortOrder={sortOrder}
+              searchTerm={searchTerm}
             />
           </div>
         </div>
